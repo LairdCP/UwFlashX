@@ -711,7 +711,7 @@ LrdFwUpd::ProcessCommandEraseBlock(
         uint8_t i = 0;
         while (i < lstEraseSizes.count())
         {
-            if (lstEraseSizes.at(i) > nEraseSize)
+            if (lstEraseSizes.at(i) >= nEraseSize)
             {
                 break;
             }

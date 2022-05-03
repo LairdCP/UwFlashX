@@ -46,7 +46,7 @@
 // Defines
 /******************************************************************************/
 #define APP_NAME                                      "UwFlashX"            //Application name
-#define APP_VERSION                                   "1.00"                //Application version
+#define APP_VERSION                                   "1.01"                //Application version
 
 /******************************************************************************/
 // Constants
