@@ -45,8 +45,9 @@ LrdAppUpd::LrdAppUpd(
     if (certFile.open(QIODevice::ReadOnly))
     {
         //Load certificate data
+        QSslConfiguration sslcConfig;
         sslcLairdConnectivitySSL = new QSslCertificate(certFile.readAll());
-        QSslSocket::addDefaultCaCertificate(*sslcLairdConnectivitySSL);
+        sslcConfig.addCaCertificate(*sslcLairdConnectivitySSL);
         certFile.close();
     }
 #endif

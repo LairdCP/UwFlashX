@@ -291,7 +291,7 @@ LrdFwBlEnter::EnterBootloader(
     //Linux
     QSerialPortInfo spiSerialInfo(strSerialPort);
     QString strOldSerialPortSerialNumber;
-    if (spiSerialInfo.isValid() && spiSerialInfo.manufacturer().indexOf(FTDI_MANUFACTURER_NAME) != -1)
+    if (!spiSerialInfo.isNull() && spiSerialInfo.manufacturer().indexOf(FTDI_MANUFACTURER_NAME) != -1)
     {
         //Valid FTDI device, proceed
         if (bSkipWarning == false)

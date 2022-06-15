@@ -118,6 +118,9 @@ You should have received a copy of the GNU General Public License along with thi
       <property name="tabStopWidth">
        <number>20</number>
       </property>
+      <property name="tabStopDistance">
+       <double>20.000000000000000</double>
+      </property>
      </widget>
     </item>
     <item>
