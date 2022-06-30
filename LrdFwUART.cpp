@@ -245,7 +245,7 @@ LrdFwUART::SerialError(
 //=============================================================================
 void
 LrdFwUART::SerialBytesWritten(
-    qint64 intByteCount
+    qint64
     )
 {
 }

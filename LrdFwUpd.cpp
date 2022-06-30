@@ -1534,7 +1534,7 @@ LrdFwUpd::ModuleDataReceived(
             //Error
             UpdateFailed(baReceivedData.at(sizeof(FUP_RESPONSE_ERROR)));
         }
-        else if (CSubMode == SUBMODE_WRITE_ADDRESS && baReceivedData.length() >= sizeof(FUP_RESPONSE_NOT_ACKNOWLEDGE) && baReceivedData[FUP_OFFSET_PACKET_TYPE] == FUP_RESPONSE_NOT_ACKNOWLEDGE)
+        else if (CSubMode == SUBMODE_WRITE_ADDRESS && baReceivedData.length() >= (qsizetype)sizeof(FUP_RESPONSE_NOT_ACKNOWLEDGE) && baReceivedData[FUP_OFFSET_PACKET_TYPE] == FUP_RESPONSE_NOT_ACKNOWLEDGE)
         {
             //Verification failure
             emit CurrentAction(MODULE_UPDATE, 0, QString("Features: ").append(QString::number((uint8_t)baReceivedData[1], 16)).append(QString::number((uint8_t)baReceivedData[2], 16)).append(QString::number((uint8_t)baReceivedData[3], 16)).append(QString::number((uint8_t)baReceivedData[4], 16)).append(QString::number((uint8_t)baReceivedData[5], 16)).append(QString::number((uint8_t)baReceivedData[6], 16)).append(QString::number((uint8_t)baReceivedData[7], 16)).append(QString::number((uint8_t)baReceivedData[8], 16)));

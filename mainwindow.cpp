@@ -517,7 +517,7 @@ MainWindow::StartStopUpgrade(
     if (bStart == true)
     {
         //Reset progress bars
-        ui->plainTextEdit->clear();
+        ui->text_Log->clear();
         ui->progress_Current->setValue(0);
         ui->progress_Overall->setValue(0);
     }
@@ -652,13 +652,13 @@ MainWindow::DelayedExit(
 //=============================================================================
 void
 MainWindow::CurrentAction(
-    uint32_t nModule,
-    uint32_t nActionID,
+    uint32_t,
+    uint32_t,
     QString strActionName
     )
 {
-    ///TODO
-ui->plainTextEdit->appendPlainText(strActionName);
+    //Append to log view
+    ui->text_Log->appendPlainText(strActionName);
 }
 
 //=============================================================================
@@ -688,13 +688,13 @@ MainWindow::ProgressUpdate(
 //=============================================================================
 void
 MainWindow::ModuleError(
-    uint32_t nModule,
+    uint32_t,
     int32_t nErrorCode
     )
 {
     this->nErrorCode = nErrorCode;
     ui->label_UpgradeStatus->setText(QString("Failed. ").append(pErrHandler->ErrorCodeToString(nErrorCode, true)));
-    ui->plainTextEdit->appendPlainText(ui->label_UpgradeStatus->text());
+    ui->text_Log->appendPlainText(ui->label_UpgradeStatus->text());
 }
 
 //=============================================================================

@@ -157,7 +157,7 @@ LrdSettings::SetConfigOption(
         varTmp = DEFAULT_CONFIG_VALIDATE_UWF;
     }
 
-    if (varValue.type() != varTmp.type())
+    if (varValue.typeId() != varTmp.typeId())
     {
         //Invalid type
         return EXIT_CODE_INVALID_SETTINGS_TYPE;

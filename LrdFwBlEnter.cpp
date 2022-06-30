@@ -114,7 +114,7 @@ LrdFwBlEnter::EnterBootloader(
     QString *pNewSerialPort,
 #endif
     bool bSkipWarning,
-    bool bSkipError
+    bool
     )
 {
     //Enters bootloader mode
@@ -318,8 +318,7 @@ LrdFwBlEnter::EnterBootloader(
         {
             //Show setup warning message
             bool bStopProcess = false;
-            CONFIG_ERRORS nErrorCode;
-            nErrorCode = pSettingsHandle->OpenPersistentConfig(APP_NAME);
+            pSettingsHandle->OpenPersistentConfig(APP_NAME);
             QVariant varShowNonRootWarning = pSettingsHandle->GetPersistentConfigOption("LinuxShownNonRootUSBWarning", false);
             if (varShowNonRootWarning.isNull() || varShowNonRootWarning == false)
             {
@@ -328,7 +327,7 @@ LrdFwBlEnter::EnterBootloader(
                 {
                     //Open web page with Linux non-root user setup instructions
                     bStopProcess = true;
-                    nErrorCode = pSettingsHandle->SetPersistentConfigOption("LinuxShownNonRootUSBWarning", true);
+                    pSettingsHandle->SetPersistentConfigOption("LinuxShownNonRootUSBWarning", true);
                     if (QDesktopServices::openUrl(QUrl(gstrURLLinuxNonRootSetup)) == false)
                     {
                         //Failed to open URL
@@ -336,7 +335,7 @@ LrdFwBlEnter::EnterBootloader(
                     }
                 }
             }
-            nErrorCode = pSettingsHandle->ClosePersistentConfig();
+            pSettingsHandle->ClosePersistentConfig();
 
             if (bStopProcess == true)
             {

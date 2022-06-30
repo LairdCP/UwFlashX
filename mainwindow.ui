@@ -31,7 +31,7 @@
      <number>4</number>
     </property>
     <item>
-     <widget class="QPlainTextEdit" name="plainTextEdit">
+     <widget class="QPlainTextEdit" name="text_Log">
       <property name="undoRedoEnabled">
        <bool>false</bool>
       </property>
@@ -1167,7 +1167,7 @@ You should have received a copy of the GNU General Public License along with thi
   <tabstop>btn_UpdateCheck</tabstop>
   <tabstop>btn_Help</tabstop>
   <tabstop>edit_Licenses</tabstop>
-  <tabstop>plainTextEdit</tabstop>
+  <tabstop>text_Log</tabstop>
  </tabstops>
  <resources/>
  <connections/>
